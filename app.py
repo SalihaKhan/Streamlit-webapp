@@ -4,7 +4,16 @@ import plotly.express as px
 from datetime import datetime
 
 # Set page configuration
-st.set_page_config(page_title="Personal Finance Tracker", layout="wide")
+st.set_page_config(
+    page_title="Personal Finance Tracker", 
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://github.com/yourusername/finance-tracker',
+        'Report a bug': "https://github.com/yourusername/finance-tracker/issues",
+        'About': "# Personal Finance Tracker\nA simple app to track your income and expenses."
+    }
+)
 
 # Add custom CSS
 st.markdown("""
@@ -155,3 +164,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+  
+
