@@ -21,6 +21,7 @@ st.markdown("""
     /* Main title animation */
     .title-animation {
         animation: fadeIn 1.5s ease-in;
+        cursor: default;
     }
     
     /* Card-like containers */
@@ -30,11 +31,18 @@ st.markdown("""
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         margin: 10px 0;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .metric-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     }
     
     /* Hover effect for transaction rows */
     .dataframe tbody tr:hover {
         background-color: #f0f2f6 !important;
+        cursor: pointer;
     }
     
     /* Animation keyframes */
@@ -56,11 +64,47 @@ st.markdown("""
         background-color: #4CAF50;
         color: white;
         transition: all 0.3s ease;
+        cursor: pointer !important;
     }
     
     .stButton>button:hover {
         background-color: #45a049;
         transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Input field styling */
+    .stTextInput input, .stNumberInput input, .stDateInput input {
+        border-radius: 5px;
+        border: 1px solid #e0e0e0;
+        padding: 8px 12px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stTextInput input:focus, .stNumberInput input:focus, .stDateInput input:focus {
+        border-color: #4CAF50;
+        box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+    }
+
+    /* Selectbox styling */
+    .stSelectbox select {
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid #e0e0e0;
+        padding: 8px 12px;
+    }
+
+    /* Plot interaction */
+    .js-plotly-plot .plotly {
+        cursor: pointer;
+    }
+
+    /* Metric values styling */
+    .metric-card h3 {
+        color: #2c3e50;
+        font-weight: 600;
+        margin-bottom: 10px;
+        cursor: default;
     }
 </style>
 """, unsafe_allow_html=True)
